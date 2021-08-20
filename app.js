@@ -10,21 +10,8 @@ app.use(express.urlencoded( {extended:true}));
 
 
 app.get('/alien', function (req, res) {
-    //console.log(mssql.dbConfig);
-    var dbConfig = {
-        driver: 'msnodesqlv8',  
-        server: '(localdb)\\mssqllocaldb',
-        database: 'PersonDB',
-        user: '',
-        password: '',
-        options: {
-            trustedConnection: true
-      },
-      debug: true,
-      parseJSON: true
-    };
-    //console.log(dbConfig);
-    sql.connect(dbConfig, function (err){
+    
+    sql.connect(mssql.dbConfig, function (err){
 
         //display error
         if(err) console.log(err);

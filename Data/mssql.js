@@ -11,4 +11,6 @@ var dbConfig = {
   parseJSON: true
 };
 
-  module.exports = dbConfig;
+module.exports = {
+    dbConfig
+} 
